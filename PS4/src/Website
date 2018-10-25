@@ -1,16 +1,110 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Sentiment Analysis</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  </head>
-  <body>
-    <script src="main.js"></script>
-    <script src="http://chancejs.com/chance.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
+<html lang="en">
+<title>SENTIMENT ANALYSIS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Sentiment Analysis Calculator</a>
+    
+  </div>
+</div>
+
+
+
+<div class="w3-main" style="margin:auto">
+<div class="w3-row w3-padding-64" style="margin:auto">
+
+
+ 
+    <div class="w3-twothird w3-container" >
+      <h1 class="w3-text-teal" style="margin:auto">User Input:</h1>
+      </div>
+    <textarea autofocus id="input" rows="4" cols="50"></textarea>
+     </div> 
+ 
+ <button type="button" > Calculate</button>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container" >
+      <h1 class="w3-text-teal">Naive Bayes Probability:</h1>
+      </div>
+    <div class="w3-third w3-container">
+      <textarea id="bayes" style="margin:auto" rows="4" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Logistic Regression Probability:</h1>
+      <p></div>
+    <div class="w3-third w3-container">
+      <textarea id="reg" rows="4" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Positive Probability:</h1>
+      <p></div>
+    <div class="w3-third w3-container">
+       <textarea id="pos" rows="4" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Negative Probability:</h1>
+      <p></div>
+    <div class="w3-third w3-container">
+      <textarea id="neg" rows="4" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Neutral Probability:</h1>
+      <p></div>
+    <div class="w3-third w3-container">
+      <textarea id="neutral" rows="4" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+
+
+ 
+
+<!-- END MAIN -->
+</div>
+
+<script>
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+}
+</script>
+
+</body>
 </html>
