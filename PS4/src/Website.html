@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>SENTIMENT ANALYSIS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+</style>
+<body >
+
+<!-- Navbar -->
+<div style = "background-color:black; margin-left:-25px; margin-right:-25px; margin-top:-25px;" >
+  <div >    
+    <h1 style = "color:white; background-color:black; margin-left:40px; margin-top:25px;">Sentiment Analysis Calculator</h1>
+    
+  </div>
+</div>
+
+
+
+<div style= " background-color: white; margin-left:-25px; margin-right:-25px; ">
+<div style="margin-left:250px">
+<div>
+
+
+ 
+    <div  >
+      <h1  style="margin:auto; color:teal;" >User Input:</h1>
+      <textarea autofocus id="input" rows="4" cols="50" ></textarea>
+      </div>
+     <button type="button" onclick="MyFunction()" style = " border-radius:8px; background-color:teal; color:white;" > Calculate</button>
+     </div> 
+ 
+
+<div style = "display:none" id = "resultsDiv">
+</br>
+<div>
+  <div >
+    <div  style="float:left">
+      <h1 style="margin:auto; color:teal; float:left">Naive Bayes Result:</h1> 
+      <textarea id="bayes" style="margin:auto" rows="1" cols="10"  readonly > </textarea>
+       
+      </div>
+  </div>
+  </br> </br></br></br>
+ 
+  
+  <div  style =" float:left;">
+    <div >
+      <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
+      </div>
+    <div >
+       <textarea id="posBayes"  rows="1" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div style =" float:left;  margin-left:10px">
+    <div  >
+      <h1 style ="margin:auto; color:teal;">Negative Probability:</h1>
+      </div>
+    <div >
+      <textarea id="negBayes"  rows="1" cols="50" readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div style =" float:left; margin-left:10px"">
+    <div >
+      <h1 style="margin:auto; color:teal;">Neutral Probability:</h1>
+      </div>
+    <div >
+      <textarea id="neutralBayes"  rows="1" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+  </div>
+</br></br></br></br></br> </br>
+<div>
+  <div>
+    <div style="float:left">
+      <h1 style="margin:auto; color:teal; float:left">Logistic Regression Result:</h1>      
+      <textarea id="reg" style= "margin:auto" rows="1" cols="10"  readonly > </textarea>
+      
+      </div>
+  </div>
+  </br> </br></br></br>
+
+<div style="float:left">
+    <div >
+      <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
+      </div>
+    <div >
+       <textarea id="posReg"  rows="1" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div style="float:left; margin-left:10px"">
+    <div >
+      <h1 style ="margin:auto; color:teal; ">Negative Probability:</h1>
+      </div>
+    <div >
+      <textarea id="negReg"  rows="1" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+
+<div style="float:left; margin-left:10px">
+    <div >
+      <h1 style="margin:auto; color:teal; ">Neutral Probability:</h1>
+      </div>
+    <div >
+      <textarea id="neutralReg"  rows="1" cols="50"  readonly >
+
+       </textarea>
+    </div>
+  </div>
+</div>
+</div>
+
+ 
+
+<!-- END MAIN -->
+</div>
+</div>
+
+<script>
+//put in the code to get the java methods here
+ function MyFunction(){
+   
+   var x = document.getElementById("resultsDiv");
+    x.style.display = "block";
+    // Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+ }
+
+
+
+</script>
+
+</body>
+</html>
