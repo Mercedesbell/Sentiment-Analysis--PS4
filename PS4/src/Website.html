@@ -24,11 +24,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 
  
-    <div  >
-      <h1  style="margin:auto; color:teal;" >User Input:</h1>
-      <textarea autofocus id="input" rows="4" cols="50"></textarea>
+    <div>
+      <h1  style="margin-left:600px; color:teal;" >User Input:</h1>
+      <textarea autofocus style="margin-left:500px;" id="input" rows="4" cols="50"></textarea>
       </div>
-     <button type="button" onclick="MyFunction()" style = " border-radius:8px; background-color:teal; color:white;"> Calculate</button>
+     <button type="button" onclick="MyFunction()" style = "margin-left:640px; border-radius:8px; background-color:teal; color:white;"> Calculate</button>
      </div> 
  
 
@@ -38,13 +38,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div >
     <div  style="float:left">
       <h1 style="margin:auto; color:teal; float:left">Naive Bayes Result:</h1> 
-      <textarea id="bayes" style="margin:auto" rows="1" cols="10"  readonly ></textarea>
+      
+	<textarea id="bayes" style="margin:auto" rows="1" cols="10"  readonly ></textarea>
        
       </div>
   </div>
-  </br> </br></br></br>
- 
   
+
+   <div style="float:right; width:45%">
+      <h1 style=" color:teal; margin: auto; float:left">Logistic Regression Result:</h1>      
+      <textarea id="reg" style= "margin:auto" rows="1" cols="10"  readonly ></textarea>
+      
+      </div>
+  </br></br></br>
+
+
   <div  style =" float:left;">
     <div >
       <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
@@ -54,7 +62,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
   </div>
 
-<div style =" float:left;  margin-left:10px">
+   
+  <div style="float:right; width:45% ;margin-left:-10px;">
+    <div >
+      <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
+      </div>
+    <div >
+       <textarea id="posReg"  rows="1" cols="50"  readonly ></textarea>
+    </div>
+  </div>
+
+
+
+<div style =" float:left;  margin-left:-390px">
+ </br> </br></br></br>
     <div  >
       <h1 style ="margin:auto; color:teal;">Negative Probability:</h1>
       </div>
@@ -62,8 +83,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <textarea id="negBayes"  rows="1" cols="50" readonly ></textarea>
     </div>
   </div>
+ </br> </br>
 
-<div style =" float:left; margin-left:10px"">
+
+
+<div style="float:right; width:45% ;margin-left:110px">
+    <div >
+</br>
+      <h1 style ="margin:auto; color:teal; ">Negative Probability:</h1>
+      </div>
+    <div >
+      <textarea id="negReg"  rows="1" cols="50"  readonly ></textarea>
+    </div>
+  </div>
+</br></br>
+</br></br>
+
+</br>
+</br>
+<div style =" float:left; margin-left:0px">
     <div >
       <h1 style="margin:auto; color:teal;">Neutral Probability:</h1>
       </div>
@@ -72,41 +110,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
   </div>
   </div>
-</br></br></br></br></br> </br>
-<div>
-  <div>
-    <div style="float:left">
-      <h1 style="margin:auto; color:teal; float:left">Logistic Regression Result:</h1>      
-      <textarea id="reg" style= "margin:auto" rows="1" cols="10"  readonly ></textarea>
-      
-      </div>
-  </div>
-  </br> </br></br></br>
-<div style="float:left">
-    <div >
-      <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
-      </div>
-    <div >
-       <textarea id="posReg"  rows="1" cols="50"  readonly ></textarea>
-    </div>
-  </div>
-<div style="float:left; margin-left:10px"">
-    <div >
-      <h1 style ="margin:auto; color:teal; ">Negative Probability:</h1>
-      </div>
-    <div >
-      <textarea id="negReg"  rows="1" cols="50"  readonly ></textarea>
-    </div>
-  </div>
 
-<div style="float:left; margin-left:10px">
+<div style="float:right; width:45% ;margin-left:190px">
     <div >
+
       <h1 style="margin:auto; color:teal; ">Neutral Probability:</h1>
       </div>
     <div >
       <textarea id="neutralReg"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
+</div>
+
+</div>
 </div>
 </div>
 
@@ -121,7 +137,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
  function MyFunction(){
    var x = document.getElementById("resultsDiv");
     x.style.display = "block";
-
     document.getElementById("bayes").innerHTML = "output[0]";  
     document.getElementById("posBayes").innerHTML = "output[1]";
     document.getElementById("negBayes").innerHTML = "output[2]";
@@ -130,7 +145,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     document.getElementById("posReg").innerHTML = "output[5]";
     document.getElementById("negReg").innerHTML = "output[6]";
     document.getElementById("neutralReg").innerHTML = "output[7]";
-
  }
 </script>
 
