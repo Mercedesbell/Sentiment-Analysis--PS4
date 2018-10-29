@@ -12,7 +12,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <div style = "background-color:black; margin-left:-25px; margin-right:-25px; margin-top:-25px;" >
   <div >    
     <h1 style = "color:white; background-color:black; margin-left:40px; margin-top:25px;">Sentiment Analysis Calculator</h1>
-    
+    <h3 style= "color:white; background-color:black; margin-right:50px; margin-top:-50px; float:right;"> NLP Team 6</h3>
   </div>
 </div>
 
@@ -25,11 +25,14 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
  
     <div>
+	</br></br></br></br>
       <h1  style="margin-left:600px; color:teal;" >User Input:</h1>
       <textarea autofocus style="margin-left:500px;" id="input" rows="4" cols="50"></textarea>
       </div>
      <button type="button" onclick="MyFunction()" style = "margin-left:640px; border-radius:8px; background-color:teal; color:white;"> Calculate</button>
-     </div> 
+    </br></br></br></br>
+	
+	 </div> 
  
 
 <div style = "display:none" id = "resultsDiv">
@@ -126,7 +129,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 </div>
 </div>
 
- 
+ <img id="img" style="margin-left:610px; width:600px;height:225px" src="https://devopedia.org/images/article/105/6387.1532706595.png" alt="Sentiment">
+
 
 <!-- END MAIN -->
 </div>
@@ -135,8 +139,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <script>
 //put in the code to get the java methods here
  function MyFunction(){
+	
    var x = document.getElementById("resultsDiv");
     x.style.display = "block";
+	document.getElementById("img").style.visibility = 'hidden'; 
     document.getElementById("bayes").innerHTML = "output[0]";  
     document.getElementById("posBayes").innerHTML = "output[1]";
     document.getElementById("negBayes").innerHTML = "output[2]";
