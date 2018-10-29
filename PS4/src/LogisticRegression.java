@@ -7,11 +7,26 @@ public class LogisticRegression {
 	HashMap<String, Integer> mapNeg;
 	boolean negation = false;
 	boolean intensifier = false;
+	int posTotal  = 0;
+	int negTotal = 0;
 	
-	public String sentiment(String sentence) throws Exception {
-		loadHashMap();
-		String answer ="neutral";
-		String[] words = sentence.split(" ");
+	public String sentiment(double[] probs) throws Exception {
+		String answer = "neutral";
+		if(probs[0] > probs[1])
+			answer = "positive";
+		if(probs[1] > probs[0])
+			answer = "negative";
+		if(probs[0] > .45 && probs[0] < .55)
+			answer = "neutral";
+		return answer;
+	}
+	
+	
+	
+	public double[] calcProbs(String[] words) throws Exception {
+//		loadHashMap();
+//		String answer ="neutral";
+//		String[] words = sentence.split(" ");
 		double[] probs = new double[2];
 		int posSum = 0;
 		int negSum = 0;
@@ -27,18 +42,25 @@ public class LogisticRegression {
 			}
 		}
 		
+		
+//		argmax ( sum ( log (  P (y ^ )) ) - sum ( w^2 ) )  
+		
 		probs[0] = (double)posSum / (posSum + negSum);
 		probs[1] = (double)negSum / (posSum + negSum);
-		if(probs[0] > probs[1])
-			answer = "positive";
-		if(probs[1] > probs[0])
-			answer = "negative";
-		String output = "Sentiment: " + answer + " Positive: " + probs[0] + " Negative: " + probs[1];
-		return output;
+		if(probs[0] < 0) {
+			probs[0] = 0;
+			probs[1] = 1;
+		}
+		else if(probs[1] < 0) {
+			probs[1] = 0;
+			probs[0] = 1;
+		}
+//		String output = "Sentiment: " + answer + " Positive: " + probs[0] + " Negative: " + probs[1];
+		return probs;
 	}
 	
 	public int sumOfWeight(String word, int emotion) {
-		int weight = 0;
+		int weight = 1;
 		
 		if(emotion == -1) {
 			if(mapNeg.containsKey(word)) {
@@ -65,7 +87,6 @@ public class LogisticRegression {
 				}
 			}
 		}
-		
 		return weight;
 	}
 	
@@ -76,6 +97,7 @@ public class LogisticRegression {
 		String line = "";
 		while((line = br.readLine())!=null) {
 			String[] words = line.split(" ");
+			posTotal+= Math.pow(Integer.parseInt(words[1]),2);
 			mapPos.put(words[0], Integer.parseInt(words[1]) );
 		}
 		br.close();
@@ -84,6 +106,7 @@ public class LogisticRegression {
 		BufferedReader br2 = new BufferedReader(new FileReader("negFeatures.txt"));
 		while((line = br2.readLine())!=null) {
 			String[] words = line.split(" ");
+			negTotal+= Math.pow(Integer.parseInt(words[1]),2);
 			mapNeg.put( words[0], Integer.parseInt(words[1]) );
 		}
 		br2.close();
