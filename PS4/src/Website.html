@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-
 </style>
 <body >
 
@@ -27,9 +26,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
  
     <div  >
       <h1  style="margin:auto; color:teal;" >User Input:</h1>
-      <textarea autofocus id="input" rows="4" cols="50" ></textarea>
+      <textarea autofocus id="input" rows="4" cols="50"></textarea>
       </div>
-     <button type="button" onclick="MyFunction()" style = " border-radius:8px; background-color:teal; color:white;" > Calculate</button>
+     <button type="button" onclick="MyFunction()" style = " border-radius:8px; background-color:teal; color:white;"> Calculate</button>
      </div> 
  
 
@@ -39,7 +38,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div >
     <div  style="float:left">
       <h1 style="margin:auto; color:teal; float:left">Naive Bayes Result:</h1> 
-      <textarea id="bayes" style="margin:auto" rows="1" cols="10"  readonly > </textarea>
+      <textarea id="bayes" style="margin:auto" rows="1" cols="10"  readonly ></textarea>
        
       </div>
   </div>
@@ -51,9 +50,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
       </div>
     <div >
-       <textarea id="posBayes"  rows="1" cols="50"  readonly >
-
-       </textarea>
+       <textarea id="posBayes"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
 
@@ -62,9 +59,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h1 style ="margin:auto; color:teal;">Negative Probability:</h1>
       </div>
     <div >
-      <textarea id="negBayes"  rows="1" cols="50" readonly >
-
-       </textarea>
+      <textarea id="negBayes"  rows="1" cols="50" readonly ></textarea>
     </div>
   </div>
 
@@ -73,9 +68,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h1 style="margin:auto; color:teal;">Neutral Probability:</h1>
       </div>
     <div >
-      <textarea id="neutralBayes"  rows="1" cols="50"  readonly >
-
-       </textarea>
+      <textarea id="neutralBayes"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
   </div>
@@ -84,31 +77,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <div>
     <div style="float:left">
       <h1 style="margin:auto; color:teal; float:left">Logistic Regression Result:</h1>      
-      <textarea id="reg" style= "margin:auto" rows="1" cols="10"  readonly > </textarea>
+      <textarea id="reg" style= "margin:auto" rows="1" cols="10"  readonly ></textarea>
       
       </div>
   </div>
   </br> </br></br></br>
-
 <div style="float:left">
     <div >
       <h1 style="margin:auto; color:teal;">Positive Probability:</h1>
       </div>
     <div >
-       <textarea id="posReg"  rows="1" cols="50"  readonly >
-
-       </textarea>
+       <textarea id="posReg"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
-
 <div style="float:left; margin-left:10px"">
     <div >
       <h1 style ="margin:auto; color:teal; ">Negative Probability:</h1>
       </div>
     <div >
-      <textarea id="negReg"  rows="1" cols="50"  readonly >
-
-       </textarea>
+      <textarea id="negReg"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
 
@@ -117,9 +104,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <h1 style="margin:auto; color:teal; ">Neutral Probability:</h1>
       </div>
     <div >
-      <textarea id="neutralReg"  rows="1" cols="50"  readonly >
-
-       </textarea>
+      <textarea id="neutralReg"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
 </div>
@@ -134,15 +119,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <script>
 //put in the code to get the java methods here
  function MyFunction(){
-   
    var x = document.getElementById("resultsDiv");
     x.style.display = "block";
-    // Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+
+    document.getElementById("bayes").innerHTML = "output[0]";  
+    document.getElementById("posBayes").innerHTML = "output[1]";
+    document.getElementById("negBayes").innerHTML = "output[2]";
+    document.getElementById("neutralBayes").innerHTML = "output[3]";
+    document.getElementById("reg").innerHTML = "output[4]";
+    document.getElementById("posReg").innerHTML = "output[5]";
+    document.getElementById("negReg").innerHTML = "output[6]";
+    document.getElementById("neutralReg").innerHTML = "output[7]";
+
  }
-
-
-
 </script>
 
 </body>
