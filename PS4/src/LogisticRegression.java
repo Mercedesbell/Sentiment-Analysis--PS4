@@ -27,9 +27,6 @@ public class LogisticRegression {
 			}
 		}
 		
-		
-		argmax ( sum ( log (  P (y ^ )) ) - sum ( w^2 ) )  
-		
 		probs[0] = (double)posSum / (posSum + negSum);
 		probs[1] = (double)negSum / (posSum + negSum);
 		if(probs[0] > probs[1])
