@@ -99,31 +99,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <textarea id="negReg"  rows="1" cols="50"  readonly ></textarea>
     </div>
   </div>
-</br></br>
-</br></br>
 
-</br>
-</br>
-<div style =" float:left; margin-left:0px">
-    <div >
-      <h1 style="margin:auto; color:teal;">Neutral Probability:</h1>
-      </div>
-    <div >
-      <textarea id="neutralBayes"  rows="1" cols="50"  readonly ></textarea>
-    </div>
-  </div>
-  </div>
-
-<div style="float:right; width:45% ;margin-left:190px">
-    <div >
-
-      <h1 style="margin:auto; color:teal; ">Neutral Probability:</h1>
-      </div>
-    <div >
-      <textarea id="neutralReg"  rows="1" cols="50"  readonly ></textarea>
-    </div>
-  </div>
-</div>
 
 </div>
 </div>
@@ -134,7 +110,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 <!-- END MAIN -->
 </div>
-</div>
 
 <script>
 //put in the code to get the java methods here
@@ -142,15 +117,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 	
    var x = document.getElementById("resultsDiv");
     x.style.display = "block";
-	document.getElementById("img").style.visibility = 'hidden'; 
+    document.getElementById("img").style.visibility = 'hidden'; 
     document.getElementById("bayes").innerHTML = "output[0]";  
     document.getElementById("posBayes").innerHTML = "output[1]";
     document.getElementById("negBayes").innerHTML = "output[2]";
-    document.getElementById("neutralBayes").innerHTML = "";
     document.getElementById("reg").innerHTML = "output[3]";
     document.getElementById("posReg").innerHTML = "output[4]";
     document.getElementById("negReg").innerHTML = "output[5]";
-    document.getElementById("neutralReg").innerHTML = "";
  }
 </script>
 
