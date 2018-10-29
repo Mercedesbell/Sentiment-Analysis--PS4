@@ -15,23 +15,31 @@ public class Bayes {
 	 int negTotal = 0;
 	 int neutralTotal = 0;
 	
-	public String sentiment(double[] probs) throws Exception {String answer = "";
+	public String sentiment(String sentence) throws Exception {
+		loadHashMap();
+		String[] words = sentence.split(" ");
+		double[] probs = calcProbs(words);
+		String answer = "";
 		if(probs[0] > probs[1] && probs[0] > probs[2])
 			answer = "positive";
 		if(probs[1] > probs[0] && probs[1] > probs[2])
 			answer = "negative";
-		if(probs[2] > probs[0] && probs[2] > probs[1])
+		/*if(probs[2] > probs[0] && probs[2] > probs[1])
 			answer = "neutral";
-		//String output = "Sentiment: " + answer + " Positive: " + probs[0] + " Negative: " + probs[1] + " Neutral: " + probs[2];
-		return answer;
+			*/
+		String output = "Sentiment: " + answer + " Positive: " + probs[0] + " Negative: " + probs[1] /* + " Neutral: " + probs[2]*/;
+		return output;
 	}
 	
 	public double[] calcProbs(String[] words) {
+
 		double[] probs = new double[3];
-		double probPos = ((double)wordsPos.size()/ (wordsPos.size() + wordsNeg.size() + wordsNeutral.size()));
-		double probNeg = ((double)wordsNeg.size() / (wordsPos.size() + wordsNeg.size() + wordsNeutral.size()));
-		double probNeutral = ((double)wordsNeutral.size() / (wordsPos.size() + wordsNeg.size() + wordsNeutral.size()));
- 		for (String word : words) {
+		double probPos = ((double)wordsPos.size()/ (wordsPos.size() + wordsNeg.size()  /*+ wordsNeutral.size()*/));
+		double probNeg = ((double)wordsNeg.size() / (wordsPos.size() + wordsNeg.size() /*+ wordsNeutral.size()*/));
+		//double probNeutral = ((double)wordsNeutral.size() / (wordsPos.size() + wordsNeg.size() + wordsNeutral.size()));
+
+		
+		for (String word : words) {
 			if(mapPos.containsKey(word))
 				probPos *= (double)(mapPos.get(word)+1.0)/(posTotal + mapPos.size()); //with smoothing
 			else
@@ -40,14 +48,16 @@ public class Bayes {
 				probNeg *= (double)(mapNeg.get(word)+1.0)/(negTotal + mapNeg.size());
 			else
 				probNeg *= (double)(1.0)/(negTotal + mapNeg.size());
+			/*
 			if(mapNeutral.containsKey(word))
 				probNeutral *= (double)(mapNeutral.get(word)+1.0)/(neutralTotal + mapNeutral.size());
 			else
 				probNeutral *= (double)(1.0)/(neutralTotal + mapNeutral.size());
+				*/
 		}
-		probs[0] = (probPos/(probPos + probNeg + probNeutral));
-		probs[1] = (probNeg/(probPos + probNeg + probNeutral));
-		probs[2] = (probNeutral/(probPos + probNeg + probNeutral));
+		probs[0] = (probPos/(probPos + probNeg /*+ probNeutral*/));
+		probs[1] = (probNeg/(probPos + probNeg /*+ probNeutral*/));
+		//probs[2] = (probNeutral/(probPos + probNeg + probNeutral));
 		return probs;
 	}
 	
@@ -86,7 +96,7 @@ public class Bayes {
 			}
 		}
 		br2.close();
-		
+		/*
 		mapNeutral = new HashMap<>();
 		wordsNeutral = new ArrayList<>();
 		BufferedReader br3 = new BufferedReader(new FileReader("neutralOutput.txt"));
@@ -103,6 +113,27 @@ public class Bayes {
 			}
 		}
 		br3.close();
+		*/
 	}
 
 }
+
+
+/*
+ * boolean NEGATION = false;
+ * boolean INTENSIFIER = false;
+ * array[] words;
+ * 
+ *	for ( word){
+ * 		if word == 'not';
+ * 			NEGATION = true;
+ * 		if(NEGATION && weight != 0){
+ * 			word.weight * -1;
+ * 			NEGATION = FALSE;
+ * 		}
+ * 	}
+ * 
+ * 
+ * 
+ * 
+ */

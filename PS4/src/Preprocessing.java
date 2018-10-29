@@ -37,13 +37,13 @@ public class Preprocessing {
 	
 	public void tfidf(ArrayList<ArrayList<String>> words, int emotion) throws Exception {
 		
-		double threshold = .3;
+		double threshold = .11;
 		TFIDF tfidf = new TFIDF();
 		for(ArrayList<String> list : words) {
 			ArrayList<String> passed = new ArrayList<>();
 			for(String w : list) {
 				double weight = tfidf.tfidf(words, w);
-//				System.out.println(w + " " + weight + " " + emotion);
+				//System.out.println(w + " " + weight + " " + emotion);
 				if(threshold > weight && !w.equals(""))
 					passed.add(w);		
 			}
