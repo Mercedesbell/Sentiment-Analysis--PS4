@@ -36,9 +36,9 @@ public class runPreprocess {
 		output[0] = answer;
 		output[1] = probs[0]+"";
 		output[2] = probs[1]+"";
-		output[4] = answer2;
-		output[5] = probs2[0]+"";
-		output[6] = probs2[1]+"";
+		output[3] = answer2;
+		output[4] = probs2[0]+"";
+		output[5] = probs2[1]+"";
         return output;
 	}
 	public void testing(Bayes bayes, Preprocessing p) throws Exception {
